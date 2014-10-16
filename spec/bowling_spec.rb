@@ -1,27 +1,27 @@
 require 'bowling'
 RSpec.describe "Bowling Kata" do
 
-  it "checks the score if the frame score is less than 10" do
-    game = Bowling.new
-    game.frame(3, 6)
-    expect( game.score).to eq(9)
-  end
-
-  it "checks that multiple frame scores are being calculated correctly" do
-    game = Bowling.new
-    game.frame(3, 6)
-    game.frame(7, 1)
-    game.frame(2, 2)
-    expect(game.score).to eq(21)
-  end
-
-  # it "checks that strikes are being calculated correctly" do
+  # it "checks the score if the frame score is less than 10" do
   #   game = Bowling.new
-  #   game.frame(10, 0)
-  #   game.frame(10, 0)
-  #   game.frame(2, 2)
-  #   expect(game.score).to eq(56)
+  #   game.frame(3, 6)
+  #   expect( game.calc_score).to eq(9)
   # end
+
+  # it "checks that multiple frame scores are being calculated correctly" do
+  #   game = Bowling.new
+  #   game.frame(3, 6)
+  #   game.frame(7, 1)
+  #   game.frame(2, 2)
+  #   expect(game.calc_score).to eq(21)
+  # end
+
+  it "checks that strikes are being calculated correctly" do
+    game = Bowling.new
+    game.frame(10)
+    game.frame(10)
+    game.frame(2, 2)
+    expect(game.calc_score).to eq(40)
+  end
   
   # it "checks that spares are being calculated correctly" do
   #   game = Bowling.new
