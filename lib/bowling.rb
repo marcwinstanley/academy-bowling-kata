@@ -8,7 +8,6 @@ class Bowling
   end
 
   def frame(turn1, turn2 = nil, turn3 = 0)
-    # @frames += 1
     if @frames == 9
       @score << turn1 << turn2 << turn3
     else
@@ -37,9 +36,6 @@ class Bowling
   def calc_score
     calc_spares
     calc_strikes
-    puts "This is the spares #{@spare_score}"
-    puts "This is the strike #{@strike_score}"
-    puts "This is the score #{@score}"
     @score.inject(:+) + @spare_score.inject(:+) + @strike_score.inject(:+)
   end
 end
